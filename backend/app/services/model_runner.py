@@ -2,8 +2,8 @@
 
 import subprocess
 import time
+import asyncio
 from app.utils.prompts import PROMPTS
-
 
 def run_model(model_name: str, prompt: str) -> str:
     """
@@ -57,3 +57,17 @@ def run_debate_session(topic: str, rounds: int = 3) -> dict:
         "verdict": verdict,
         "timestamp": time.time()
     }
+
+class ModelSessionManager:
+    def __init__(self):
+        self.active_sessions = {}
+        self.model_queue = asyncio.Queue()
+    
+    async def get_model_session(self, model_name: str):
+        if model_name not in self.active_sessions:
+            await self.load_model(model_name)
+        return self.active_sessions[model_name]
+    
+    async def load_model(self, model_name: str):
+        # Implement persistent model loading
+        pass

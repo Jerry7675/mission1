@@ -4,6 +4,15 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from app.services.model_runner import run_model
 from app.utils.prompts import PROMPTS
 import asyncio
+from app.db.database import get_db
+from app.db.schemas import DebateSession, DebateRound
+
+async def save_debate_to_db(topic: str, rounds: list, verdict: str):
+    db = next(get_db())
+    session = DebateSession(topic=topic, verdict=verdict)
+    db.add(session)
+    db.commit()
+    # Save rounds...
 
 router = APIRouter()
 
