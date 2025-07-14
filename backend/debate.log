@@ -1,0 +1,31 @@
+2025-07-14 19:17:37,107 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 19:18:59,538 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 19:19:00,810 - app - ERROR - ChromaDB init failed: [91mYou are using a deprecated configuration of Chroma.
+
+[94mIf you do not have data you wish to migrate, you only need to change how you construct
+your Chroma client. Please see the "New Clients" section of https://docs.trychroma.com/deployment/migration.
+________________________________________________________________________________________________
+
+If you do have data you wish to migrate, we have a migration tool you can use in order to
+migrate your data to the new Chroma architecture.
+Please `pip install chroma-migrate` and run `chroma-migrate` to migrate your data and then
+change how you construct your Chroma client.
+
+See https://docs.trychroma.com/deployment/migration for more information or join our discord at https://discord.gg/MMeYNTmh3x for help![0m
+2025-07-14 19:33:51,041 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 19:34:24,506 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 19:34:27,227 - app - INFO - ChromaDB initialized successfully
+2025-07-14 19:34:29,231 - app - ERROR - Model load failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-07-14 20:01:34,224 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 20:01:36,060 - app - INFO - ChromaDB initialized successfully
+2025-07-14 20:01:38,170 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-14 20:01:38,171 - app - ERROR - Model load failed: pull model manifest: file does not exist (status code: 500)
+2025-07-14 20:02:04,878 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 20:02:06,618 - app - INFO - ChromaDB initialized successfully
+2025-07-14 20:02:07,640 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-14 20:02:07,640 - app - ERROR - Model load failed: pull model manifest: file does not exist (status code: 500)
+2025-07-14 20:07:34,126 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 20:09:17,291 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-14 20:09:19,203 - app - INFO - ChromaDB initialized successfully
+2025-07-14 20:12:33,209 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-14 20:12:33,212 - app - ERROR - Model load failed: object ProgressResponse can't be used in 'await' expression

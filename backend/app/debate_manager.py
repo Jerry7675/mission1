@@ -5,22 +5,24 @@ from typing import Dict, List, Tuple
 from .chroma_handler import ChromaHandler
 from . import logger
 from .utils.topics import get_random_topic
+from .models import OllamaWrapper
 
 class DebateManager:
     def __init__(self):
         self.chroma = ChromaHandler()
+        self.llm = OllamaWrapper() 
         self.active_models = set()
         self.model_config = {
             "pro": {
-                "name": "mistral:7b-q4_K_M",
+                "name": "mistral",
                 "system_prompt": "You're a competitive debater. Present strong arguments with evidence."
             },
             "con": {
-                "name": "deepseek-r1:7b-q3_K_L", 
+                "name": "deepseek-r1", 
                 "system_prompt": "You're a critical analyst. Find flaws and counterarguments."
             },
             "judge": {
-                "name": "gemma:2b-q4_0",
+                "name": "gemma3",
                 "system_prompt": "You're an impartial judge. Evaluate arguments technically."
             }
         }

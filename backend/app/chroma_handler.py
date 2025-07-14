@@ -19,16 +19,16 @@ class ChromaHandler:
     
     def _initialize(self):
         try:
+            # Updated Chroma client configuration
             self.client = chromadb.PersistentClient(
                 path=str(CHROMA_DIR),
                 settings=Settings(
-                    chroma_db_impl="duckdb+parquet",
+                    anonymized_telemetry=False,
                     allow_reset=False
                 )
             )
             self.debate_collection = self.client.get_or_create_collection(
-                name="debate_transcripts",
-                metadata={"hnsw:space": "cosine"}
+                name="debate_transcripts"
             )
             logger.info("ChromaDB initialized successfully")
         except Exception as e:
@@ -44,8 +44,7 @@ class ChromaHandler:
                 self.debate_collection.add(
                     documents=[round_data["content"]],
                     metadatas=[metadata or {}],
-                    ids=f"round_{round_data['round_number']}",
-                    embeddings=None  # We'll add these later
+                    ids=f"round_{round_data['round_number']}"
                 )
             return True
         except Exception as e:
