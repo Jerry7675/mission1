@@ -9,17 +9,16 @@ from . import logger, CHROMA_DIR
 class ChromaHandler:
     _instance = None
     _lock = threading.Lock()
-    
+
     def __new__(cls):
         with cls._lock:
             if cls._instance is None:
                 cls._instance = super().__new__(cls)
                 cls._instance._initialize()
         return cls._instance
-    
+
     def _initialize(self):
         try:
-            # Updated Chroma client configuration
             self.client = chromadb.PersistentClient(
                 path=str(CHROMA_DIR),
                 settings=Settings(
@@ -35,15 +34,14 @@ class ChromaHandler:
             logger.error(f"ChromaDB init failed: {str(e)}")
             raise
 
-    def log_debate_round(self, 
-                        round_data: Dict, 
-                        metadata: Optional[Dict] = None) -> bool:
-        """Thread-safe round logging"""
+    def log_debate_round(self, round_data: Dict, metadata: Optional[Dict] = None) -> bool:
         try:
+            if not metadata or not isinstance(metadata, dict) or len(metadata) == 0:
+                raise ValueError("Expected metadata to be a non-empty dict")
             with self._lock:
                 self.debate_collection.add(
                     documents=[round_data["content"]],
-                    metadatas=[metadata or {}],
+                    metadatas=[metadata],
                     ids=f"round_{round_data['round_number']}"
                 )
             return True
@@ -52,7 +50,6 @@ class ChromaHandler:
             return False
 
     def get_transcript(self, num_rounds: int = 5) -> List[Dict]:
-        """Retrieve last N rounds"""
         try:
             results = self.debate_collection.get(
                 limit=num_rounds,
