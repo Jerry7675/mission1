@@ -1,31 +1,30 @@
-# mission1/backend/app/main.py
+from fastapi import FastAPI, WebSocket
+from fastapi.staticfiles import StaticFiles
+from app.api import audio, debate
+import os
 
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from app.api import debate, audio
-from app.db.database import engine
-from app.db import schemas
-from app.api import debate, audio, websocket
+app = FastAPI()
 
+# Include your API routers
+app.include_router(debate.router, prefix="/api/debate")
+app.include_router(audio.router, prefix="/api/audio")
 
+# WebSocket endpoint
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_text()
+            # Echo back the received message
+            await websocket.send_text(f"Message received: {data}")
+    except WebSocketDisconnect:
+        print("Client disconnected")
 
+# Serve frontend files in production
+if os.path.exists("../frontend/dist"):
+    app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
-# Create DB tables
-schemas.Base.metadata.create_all(bind=engine)
-
-# Initialize FastAPI app
-app = FastAPI(title="Debate Engine API")
-
-# Allow all origins during development
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Include routers
-app.include_router(debate.router)
-app.include_router(audio.router)
-app.include_router(websocket.router)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
