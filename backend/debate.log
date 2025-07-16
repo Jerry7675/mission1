@@ -144,3 +144,10 @@ See https://docs.trychroma.com/deployment/migration for more information or join
 2025-07-14 21:20:33,422 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
 2025-07-14 21:20:33,424 - app - INFO - Skipping unload of: mistral:7b
 2025-07-14 21:20:33,424 - app - INFO - Skipping unload of: gemma2:9b
+2025-07-16 15:19:50,582 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-16 15:19:53,723 - app - INFO - ChromaDB initialized successfully
+2025-07-16 15:19:53,963 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:19:54,201 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:19:54,202 - app - WARNING - Frontend build not found - API-only mode
+2025-07-16 15:19:54,237 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-16 15:19:54,238 - app.models - INFO - Ollama health check passed
