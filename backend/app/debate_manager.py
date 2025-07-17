@@ -12,11 +12,11 @@ class DebateManager:
         self.model_config = {
             "pro": {
                 "name": "mistral:7b",
-                "system_prompt": "You're a passionate debater. Construct persuasive, evidence-backed arguments defending your position with charisma and facts."
+                "system_prompt": "You're a passionate debater. Construct persuasive, evidence-backed arguments defending your position with charisma and facts. Defeat your opponent based on the topic go on with the topic (act as per the topic given)."
             },
             "con": {
                 "name": "gemma2:9b",
-                "system_prompt": "You're a sharp analyst. Refute arguments convincingly with logic, flaws, and counterexamples."
+                "system_prompt": "You're a sharp analyst. Refute arguments convincingly with logic, flaws, and counterexamples. Defeat your opponent based on the topic go on with the topic (act as per the topic given)."
             },
             "judge": {
                 "name": "deepseek-r1:7b",
@@ -133,7 +133,7 @@ class DebateManager:
             model_first = pro_model if first == "pro" else con_model
             model_second = con_model if second == "con" else pro_model
 
-            intro_line = f"🔥 Round {round_num} | Topic: {topic}\n"
+            intro_line = f" Round {round_num} | Topic: {topic}\n"
             prompt_1 = f"{intro_line}You're speaking first. Argue {'FOR' if first == 'pro' else 'AGAINST'} this topic compellingly:"
             raw_response_1 = await self._generate_response(model_first, prompt_1, self.model_config[first]["system_prompt"])
             response_1 = self._clean_response(raw_response_1)
@@ -175,8 +175,8 @@ class DebateManager:
                     system=system,
                     options={
                         "temperature": 0.7,
-                        "num_ctx": 2048,
-                        "num_predict": 512
+                        "num_ctx": 4096,
+                        "num_predict": 1024
                     }
                 ),
                 timeout=60

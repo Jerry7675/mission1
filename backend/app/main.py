@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 from typing import List
 import json
+from . import transcribe
 
 from . import __version__, logger
 from .debate_manager import DebateManager
@@ -34,9 +35,10 @@ manager = DebateManager()
 llm = OllamaWrapper()
 chroma = ChromaHandler()
 
+app.include_router(transcribe.router)
+
 @app.on_event("startup")
 async def startup_event():
-    """Service dependency check on startup"""
     if not await llm.health_check():
         logger.error("Ollama service not running! Start it via: ollama serve")
         raise RuntimeError("Ollama service required")
@@ -49,7 +51,6 @@ async def startup_event():
 
 @app.websocket("/ws/debate")
 async def websocket_debate(websocket: WebSocket):
-    """WebSocket handler for interactive debate events"""
     await websocket.accept()
     try:
         while True:
@@ -63,7 +64,7 @@ async def websocket_debate(websocket: WebSocket):
 
             if message.get("action") == "start_debate":
                 topic = message.get("topic")
-                rounds = min(5, int(message.get("rounds", 3)))
+                rounds = min(5, int(message.get("rounds", 5)))
 
                 try:
                     async for event in manager.stream_debate(topic=topic, rounds=rounds):
