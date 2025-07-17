@@ -7,7 +7,7 @@ import os
 router = APIRouter()
 
 
-model = whisper.load_model("medium")  
+model = whisper.load_model("small")  
 
 @router.post("/api/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
