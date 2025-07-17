@@ -1,9 +1,15 @@
-
+// src/main.jsx
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.jsx';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';  // your global styles like tailwind etc.
 
-createRoot(document.getElementById('root')).render(
-  <App />
+const container = document.getElementById('root');
+
+const root = ReactDOM.createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );

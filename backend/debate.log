@@ -151,3 +151,50 @@ See https://docs.trychroma.com/deployment/migration for more information or join
 2025-07-16 15:19:54,202 - app - WARNING - Frontend build not found - API-only mode
 2025-07-16 15:19:54,237 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
 2025-07-16 15:19:54,238 - app.models - INFO - Ollama health check passed
+2025-07-16 15:26:21,163 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-16 15:26:22,799 - app - INFO - ChromaDB initialized successfully
+2025-07-16 15:26:23,039 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:26:23,290 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:26:23,291 - app - WARNING - Frontend build not found - API-only mode
+2025-07-16 15:26:23,303 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-16 15:26:23,304 - app.models - INFO - Ollama health check passed
+2025-07-16 15:27:51,978 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-16 15:27:53,665 - app - INFO - ChromaDB initialized successfully
+2025-07-16 15:27:53,922 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:27:54,179 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:27:54,181 - app - WARNING - Frontend build not found - API-only mode
+2025-07-16 15:27:54,192 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-16 15:27:54,193 - app.models - INFO - Ollama health check passed
+2025-07-16 15:55:44,025 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-16 15:55:45,668 - app - INFO - ChromaDB initialized successfully
+2025-07-16 15:55:45,911 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:55:46,164 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-16 15:55:46,166 - app - WARNING - Frontend build not found - API-only mode
+2025-07-16 15:55:46,173 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-16 15:55:46,173 - app.models - INFO - Ollama health check passed
+2025-07-16 16:08:34,619 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-16 16:08:34,620 - app.models - INFO - Ollama health check passed
+2025-07-16 16:08:37,794 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-16 16:08:37,795 - app - INFO - Loaded model: mistral:7b
+2025-07-16 16:08:39,097 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-16 16:08:39,098 - app - INFO - Loaded model: gemma2:9b
+2025-07-16 16:08:39,098 - app - INFO - Starting round 1
+2025-07-16 16:08:57,626 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-16 16:09:57,892 - app - WARNING - Model timeout: gemma2:9b
+2025-07-16 16:09:58,517 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-16 16:09:58,518 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_1
+2025-07-16 16:09:58,589 - app - INFO - Starting round 2
+2025-07-16 16:10:58,901 - app - WARNING - Model timeout: gemma2:9b
+2025-07-16 16:11:15,957 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-16 16:11:15,989 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-16 16:11:15,990 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_2
+2025-07-16 16:11:15,994 - app - INFO - Starting round 3
+2025-07-16 16:11:28,403 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-16 16:12:28,713 - app - WARNING - Model timeout: gemma2:9b
+2025-07-16 16:12:28,782 - app - INFO - Skipping deletion to retain model: mistral:7b
+2025-07-16 16:12:30,213 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-16 16:12:30,214 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-16 16:12:55,049 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-16 16:12:55,050 - app - INFO - Skipping unload of: gemma2:9b
+2025-07-16 16:12:55,051 - app - INFO - Skipping unload of: deepseek-r1:7b
+2025-07-16 16:14:08,718 - app - INFO - Client disconnected
