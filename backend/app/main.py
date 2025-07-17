@@ -1,16 +1,16 @@
 # backend/app/main.py
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+from typing import List
+import json
+
+from . import __version__, logger
 from .debate_manager import DebateManager
 from .models import OllamaWrapper
 from .chroma_handler import ChromaHandler
-import asyncio
-import logging
-from pathlib import Path
-from typing import Dict, List
-import json
-from . import __version__, logger
 
 app = FastAPI(
     title="AI Debate Platform",
@@ -20,73 +20,54 @@ app = FastAPI(
     redoc_url="/api/redoc"
 )
 
-# Setup CORS
+# CORS setup for frontend/backend integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # TIP: Restrict in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Initialize core components
+# Core service instances
 manager = DebateManager()
 llm = OllamaWrapper()
 chroma = ChromaHandler()
 
 @app.on_event("startup")
 async def startup_event():
-    """Validate services on startup"""
+    """Service dependency check on startup"""
     if not await llm.health_check():
-        logger.error("Ollama service not running! Start with: ollama serve")
+        logger.error("Ollama service not running! Start it via: ollama serve")
         raise RuntimeError("Ollama service required")
-    
+
     try:
-        chroma.client.heartbeat()  # Simple ChromaDB check
+        chroma.client.heartbeat()
     except Exception as e:
-        logger.error(f"ChromaDB connection failed: {str(e)}")
+        logger.error(f"ChromaDB not reachable: {str(e)}")
         raise
 
 @app.websocket("/ws/debate")
 async def websocket_debate(websocket: WebSocket):
-    """WebSocket endpoint for real-time debates"""
+    """WebSocket handler for interactive debate events"""
     await websocket.accept()
     try:
         while True:
             data = await websocket.receive_text()
+
             try:
                 message = json.loads(data)
             except json.JSONDecodeError:
-                await websocket.send_json({"error": "Invalid JSON"})
+                await websocket.send_json({"error": "Invalid JSON format"})
                 continue
 
             if message.get("action") == "start_debate":
-                # Start new debate
                 topic = message.get("topic")
                 rounds = min(5, int(message.get("rounds", 3)))
-                
+
                 try:
-                    result = await manager.run_debate(
-                        topic=topic,
-                        rounds=rounds
-                    )
-                    
-                    # Send progress updates
-                    for round_data in result["transcript"]:
-                        await websocket.send_json({
-                            "type": "round_update",
-                            "data": round_data
-                        })
-                    
-                    # Final verdict
-                    await websocket.send_json({
-                        "type": "verdict",
-                        "data": {
-                            "topic": result["topic"],
-                            "verdict": result["verdict"]
-                        }
-                    })
-                    
+                    async for event in manager.stream_debate(topic=topic, rounds=rounds):
+                        await websocket.send_json(event)
                 except Exception as e:
                     logger.error(f"Debate failed: {str(e)}")
                     await websocket.send_json({
@@ -95,15 +76,21 @@ async def websocket_debate(websocket: WebSocket):
                     })
 
             elif message.get("action") == "get_history":
-                # Retrieve past debates
-                debates = chroma.get_transcript(num_rounds=10)
-                await websocket.send_json({
-                    "type": "history",
-                    "data": debates
-                })
+                try:
+                    debates = chroma.get_transcript(num_rounds=10)
+                    await websocket.send_json({
+                        "type": "history",
+                        "data": debates
+                    })
+                except Exception as e:
+                    logger.error(f"Failed to get history: {str(e)}")
+                    await websocket.send_json({
+                        "type": "error",
+                        "message": str(e)
+                    })
 
     except WebSocketDisconnect:
-        logger.info("Client disconnected")
+        logger.info("WebSocket: Client disconnected")
     except Exception as e:
         logger.error(f"WebSocket error: {str(e)}")
         await websocket.send_json({
@@ -113,7 +100,7 @@ async def websocket_debate(websocket: WebSocket):
 
 @app.get("/api/health")
 async def health_check():
-    """Health check endpoint"""
+    """Basic API health and model status check"""
     return {
         "status": "healthy" if await llm.health_check() else "unhealthy",
         "version": __version__,
@@ -122,19 +109,19 @@ async def health_check():
 
 @app.get("/api/history")
 async def get_history(limit: int = 5):
-    """Get debate history"""
+    """Return last N debate rounds"""
     try:
         return chroma.get_transcript(num_rounds=limit)
     except Exception as e:
-        raise HTTPException(500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
 
-# Serve frontend files if they exist
+# Serve frontend if built
 frontend_dir = Path(__file__).parent.parent / "frontend" / "dist"
 if frontend_dir.exists():
     app.mount("/", StaticFiles(directory=str(frontend_dir), html=True), name="static")
     logger.info(f"Serving frontend from {frontend_dir}")
 else:
-    logger.warning("Frontend build not found - API-only mode")
+    logger.warning("Frontend not found. Running in API-only mode.")
 
 @app.get("/")
 async def root():

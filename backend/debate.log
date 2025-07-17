@@ -198,3 +198,65 @@ See https://docs.trychroma.com/deployment/migration for more information or join
 2025-07-16 16:12:55,050 - app - INFO - Skipping unload of: gemma2:9b
 2025-07-16 16:12:55,051 - app - INFO - Skipping unload of: deepseek-r1:7b
 2025-07-16 16:14:08,718 - app - INFO - Client disconnected
+2025-07-17 16:20:24,596 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-17 16:21:46,516 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-17 16:21:49,751 - app - INFO - ChromaDB initialized successfully
+2025-07-17 16:21:49,998 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-17 16:21:49,999 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-17 16:21:52,005 - app.models - ERROR - Ollama health check failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-07-17 16:21:52,006 - app - ERROR - Ollama service not running! Start it via: ollama serve
+2025-07-17 16:22:37,004 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-17 16:22:38,640 - app - INFO - ChromaDB initialized successfully
+2025-07-17 16:22:38,890 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-17 16:22:38,891 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-17 16:22:38,928 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-17 16:22:38,930 - app.models - INFO - Ollama health check passed
+2025-07-17 16:49:36,092 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-17 16:49:37,549 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-17 16:49:37,550 - app - INFO - Loaded model: mistral:7b
+2025-07-17 16:49:39,717 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-17 16:49:39,718 - app - INFO - Loaded model: gemma2:9b
+2025-07-17 16:49:39,718 - app - INFO - Streaming round 1
+2025-07-17 16:49:57,720 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:50:57,988 - app - WARNING - gemma2:9b timed out.
+2025-07-17 16:50:58,586 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-17 16:50:58,587 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-17 16:50:58,590 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-17 16:50:58,591 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_1
+2025-07-17 16:50:58,697 - app - ERROR - Debate failed: 
+2025-07-17 16:50:58,698 - app - ERROR - WebSocket error: Cannot call "send" once a close message has been sent.
+2025-07-17 16:50:58,791 - app - INFO - Unloading model (skipped actual unload): mistral:7b
+2025-07-17 16:50:58,791 - app - INFO - Unloading model (skipped actual unload): gemma2:9b
+2025-07-17 16:51:18,874 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-17 16:51:20,249 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-17 16:51:20,250 - app - INFO - Loaded model: mistral:7b
+2025-07-17 16:51:21,592 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-17 16:51:21,593 - app - INFO - Loaded model: gemma2:9b
+2025-07-17 16:51:21,593 - app - INFO - Streaming round 1
+2025-07-17 16:51:37,267 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:52:37,544 - app - WARNING - gemma2:9b timed out.
+2025-07-17 16:52:37,633 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-17 16:52:37,634 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_1
+2025-07-17 16:52:37,639 - app - INFO - Streaming round 2
+2025-07-17 16:53:29,675 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:53:47,598 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:53:47,630 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-17 16:53:47,631 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_2
+2025-07-17 16:53:47,645 - app - INFO - Streaming round 3
+2025-07-17 16:54:00,128 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:55:00,434 - app - WARNING - gemma2:9b timed out.
+2025-07-17 16:55:00,498 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-17 16:55:00,499 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: round_3
+2025-07-17 16:55:00,503 - app - INFO - Retaining model (no unload): mistral:7b
+2025-07-17 16:55:02,095 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-17 16:55:02,095 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-17 16:55:30,388 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-17 16:55:30,390 - app - INFO - Unloading model (skipped actual unload): deepseek-r1:7b
+2025-07-17 16:55:30,390 - app - INFO - Unloading model (skipped actual unload): gemma2:9b
+2025-07-17 17:00:20,447 - app - INFO - WebSocket: Client disconnected
+2025-07-17 17:00:21,240 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-17 17:00:23,346 - app - INFO - ChromaDB initialized successfully
+2025-07-17 17:00:23,617 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-17 17:00:23,618 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-17 17:00:23,626 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-17 17:00:23,627 - app.models - INFO - Ollama health check passed

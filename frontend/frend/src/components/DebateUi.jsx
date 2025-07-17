@@ -1,4 +1,4 @@
-import { useDebate } from '../hooks/useDebate';
+import { useDebate } from '../contexts/DebateContext';
 import React from 'react';
 
 const DebateUI = () => {
