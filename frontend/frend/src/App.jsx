@@ -11,7 +11,7 @@ function App() {
         <h1 className="text-2xl font-bold mb-4">AI Debate Platform</h1>
         <TopicSelector />
        
-        <DebateUi />
+       
       </div>
     </DebateProvider>
   );

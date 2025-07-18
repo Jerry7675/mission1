@@ -13,39 +13,51 @@ export const DebateProvider = ({ children }) => {
 
   const wsRef = useRef(null);
 
-  const setDebateTopic = (newTopic) => {
-    if (!newTopic) return;
-    setTranscript([]);
-    setVerdict('');
-    setIsDebating(true);
-    setTopic(newTopic);
+const setDebateTopic = (newTopic) => {
+  if (!newTopic) return;
+  setTranscript([]);
+  setVerdict('');
+  setIsDebating(true);
+  setTopic(newTopic);
+  setError(null); // Clear any old error
 
-    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN) {
-      wsRef.current = new WebSocket('ws://localhost:8000/ws/debate');
-    }
+  // Create new WebSocket
+  const ws = new WebSocket('ws://localhost:8000/ws/debate');
+  wsRef.current = ws;
 
-    wsRef.current.onopen = () => {
-      wsRef.current.send(JSON.stringify({ action: 'start_debate', topic: newTopic, rounds: 3 }));
-    };
-
-    wsRef.current.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      if (message.type === 'round_update') {
-        setTranscript((prev) => [...prev, message.data]);
-      } else if (message.type === 'verdict') {
-        setVerdict(message.data.verdict);
-        setIsDebating(false);
-      } else if (message.type === 'error') {
-        setError(message.message);
-        setIsDebating(false);
-      }
-    };
-
-    wsRef.current.onerror = () => {
-      setError('WebSocket error');
-      setIsDebating(false);
-    };
+  // When connected
+  ws.onopen = () => {
+    console.log("WebSocket connected");
+    ws.send(JSON.stringify({ action: 'start_debate', topic: newTopic, rounds: 5 }));
   };
+
+  // Handle messages
+  ws.onmessage = (event) => {
+    const message = JSON.parse(event.data);
+    if (message.type === 'round_update') {
+      setTranscript((prev) => [...prev, message.data]);
+    } else if (message.type === 'verdict') {
+      setVerdict(message.data.verdict);
+      setIsDebating(false);
+      ws.close(); // Close after verdict
+    } else if (message.type === 'error') {
+      setError(message.message);
+      setIsDebating(false);
+      ws.close();
+    }
+  };
+
+  ws.onerror = (err) => {
+    console.error("WebSocket error", err);
+    setError('WebSocket error occurred.');
+    setIsDebating(false);
+  };
+
+  ws.onclose = () => {
+    console.log("WebSocket closed");
+  };
+};
+
 
   return (
     <DebateContext.Provider
