@@ -253,43 +253,57 @@ const TopicSelector = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => window.location.reload()}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-all font-medium"
+              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 py-2 rounded-lg transition-all font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               ← Back to Topics
             </button>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-md">
               <span className="text-sm font-medium">Status:</span>
               <span className={`text-sm font-bold ${getConnectionStatusColor()}`}>
                 {connectionStatus}
               </span>
             </div>
           </div>
-          <img src={logo} alt="App Logo" className="h-12 w-auto drop-shadow-xl" />
+          <img src={logo} alt="App Logo" className="h-12 w-auto drop-shadow-xl rounded-lg" />
         </div>
 
         {/* Current Topic */}
-        <div className="bg-white shadow-lg rounded-lg p-4 mb-6">
-          <h2 className="text-xl font-bold text-blue-700 mb-2">Current Topic:</h2>
-          <p className="text-gray-700 text-lg">{currentTopic}</p>
-          <div className="mt-2 text-sm text-gray-500">
-            Mode: {mode === 'user' ? 'User Selected' : 'Random'}
+        <div className="bg-white shadow-xl rounded-2xl p-6 mb-6 border border-gray-100">
+          <h2 className="text-xl font-bold text-blue-700 mb-3 flex items-center gap-2">
+            <span className="text-2xl">💭</span>
+            Current Topic:
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed">{currentTopic}</p>
+          <div className="mt-3 flex items-center gap-2">
+            <span className="text-sm text-gray-500">Mode:</span>
+            <span className={`text-sm font-medium px-2 py-1 rounded-full ${
+              mode === 'user' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700'
+            }`}>
+              {mode === 'user' ? '👤 User Selected' : '🎲 Random'}
+            </span>
           </div>
         </div>
 
         {/* Debate Status */}
         {isDebating && (
-          <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-4 mb-6">
-            <div className="flex items-center gap-2">
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-yellow-600"></div>
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-400 rounded-2xl p-4 mb-6 shadow-md">
+            <div className="flex items-center gap-3">
+              <div className="animate-spin rounded-full h-5 w-5 border-2 border-yellow-600 border-t-transparent"></div>
               <span className="text-yellow-800 font-medium">Debate in progress...</span>
+              <div className="flex gap-1 ml-auto">
+                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                <div className="w-2 h-2 bg-yellow-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+              </div>
             </div>
           </div>
         )}
 
         {/* Error Display */}
         {error && (
-          <div className="bg-red-100 border border-red-400 rounded-lg p-4 mb-6">
-            <div className="flex items-center gap-2">
+          <div className="bg-gradient-to-r from-red-50 to-pink-50 border border-red-400 rounded-2xl p-4 mb-6 shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">⚠️</span>
               <span className="text-red-800 font-medium">Error: {error}</span>
             </div>
           </div>
@@ -297,27 +311,36 @@ const TopicSelector = () => {
 
         {/* Transcript Display */}
         {transcript.length > 0 && (
-          <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">Debate Transcript</h3>
-            <div className="space-y-4 max-h-96 overflow-y-auto">
+          <div className="bg-white shadow-xl rounded-2xl p-6 mb-6 border border-gray-100">
+            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span className="text-2xl">📝</span>
+              Debate Transcript
+            </h3>
+            <div className="space-y-6 max-h-96 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
               {transcript.map((round, index) => {
                 const isEvenRound = round.round_number % 2 === 0;
                 const actualPro = isEvenRound ? round.con : round.pro;
                 const actualCon = isEvenRound ? round.pro : round.con;
 
                 return (
-                  <div key={index} className="border-l-4 border-blue-400 pl-4">
-                    <div className="font-semibold text-blue-700 mb-2">
-                      Round {round.round_number}
+                  <div key={index} className="border-l-4 border-blue-400 pl-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-r-xl p-4">
+                    <div className="font-semibold text-blue-700 mb-3 flex items-center gap-2">
+                      <span className="bg-blue-100 px-2 py-1 rounded-full text-sm">Round {round.round_number}</span>
                     </div>
-                    <div className="space-y-3">
-                      <div className="bg-green-50 p-3 rounded-md">
-                        <span className="font-medium text-green-800">PRO:</span>
-                        <p className="text-gray-700 mt-1">{actualPro}</p>
+                    <div className="space-y-4">
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200 shadow-sm">
+                        <span className="font-bold text-green-800 flex items-center gap-2 mb-2">
+                          <span className="text-lg">✅</span>
+                          PRO:
+                        </span>
+                        <p className="text-gray-700 leading-relaxed">{actualPro}</p>
                       </div>
-                      <div className="bg-red-50 p-3 rounded-md">
-                        <span className="font-medium text-red-800">CON:</span>
-                        <p className="text-gray-700 mt-1">{actualCon}</p>
+                      <div className="bg-gradient-to-r from-red-50 to-rose-50 p-4 rounded-xl border border-red-200 shadow-sm">
+                        <span className="font-bold text-red-800 flex items-center gap-2 mb-2">
+                          <span className="text-lg">❌</span>
+                          CON:
+                        </span>
+                        <p className="text-gray-700 leading-relaxed">{actualCon}</p>
                       </div>
                     </div>
                   </div>
@@ -329,10 +352,13 @@ const TopicSelector = () => {
 
         {/* Verdict Display */}
         {verdict && (
-          <div className="bg-white shadow-lg rounded-lg p-6">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">🏆 Final Verdict</h3>
-            <div className="bg-blue-50 p-4 rounded-md">
-              <p className="text-gray-700 whitespace-pre-wrap">{verdict}</p>
+          <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100">
+            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <span className="text-2xl">🏆</span>
+              Final Verdict
+            </h3>
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200 shadow-inner">
+              <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">{verdict}</p>
             </div>
           </div>
         )}
@@ -342,23 +368,24 @@ const TopicSelector = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 p-4 overflow-hidden">
-      {/* Floating animated background blobs */}
+      {/* Enhanced floating animated background blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute bg-pink-300 opacity-30 w-72 h-72 rounded-full top-10 left-10 animate-pulse" />
-        <div className="absolute bg-purple-300 opacity-30 w-96 h-96 rounded-full bottom-10 right-10 animate-ping" />
+        <div className="absolute bg-gradient-to-r from-pink-300 to-rose-300 opacity-20 w-72 h-72 rounded-full top-10 left-10 animate-pulse blur-xl" />
+        <div className="absolute bg-gradient-to-r from-purple-300 to-indigo-300 opacity-20 w-96 h-96 rounded-full bottom-10 right-10 animate-ping blur-xl" />
+        <div className="absolute bg-gradient-to-r from-blue-300 to-cyan-300 opacity-15 w-64 h-64 rounded-full top-1/2 left-1/3 animate-bounce blur-2xl" />
       </div>
 
-      {/* Status Bar */}
-      <div className="absolute top-4 left-4 flex items-center gap-4">
-        <div className="bg-white px-3 py-1 rounded-full shadow-md">
-          <span className="text-xs font-medium">Backend:</span>
+      {/* Enhanced Status Bar */}
+      <div className="absolute top-4 left-4 flex items-center gap-3">
+        <div className="bg-white backdrop-blur-sm bg-opacity-90 px-4 py-2 rounded-full shadow-lg border border-white border-opacity-20">
+          <span className="text-xs font-medium text-gray-600">Backend:</span>
           <span className={`text-xs font-bold ml-1 ${getHealthStatusColor()}`}>
             {healthStatus?.status || 'checking...'}
           </span>
         </div>
         {healthStatus?.models_loaded && (
-          <div className="bg-white px-3 py-1 rounded-full shadow-md">
-            <span className="text-xs font-medium">Models:</span>
+          <div className="bg-white backdrop-blur-sm bg-opacity-90 px-4 py-2 rounded-full shadow-lg border border-white border-opacity-20">
+            <span className="text-xs font-medium text-gray-600">Models:</span>
             <span className="text-xs font-bold ml-1 text-blue-600">
               {healthStatus.models_loaded.length}
             </span>
@@ -366,14 +393,14 @@ const TopicSelector = () => {
         )}
       </div>
 
-      {/* Logo */}
+      {/* Enhanced Logo */}
       <div className="absolute top-4 right-4">
-        <img src={logo} alt="App Logo" className="h-16 w-auto drop-shadow-xl" />
+        <img src={logo} alt="App Logo" className="h-16 w-auto drop-shadow-2xl rounded-2xl border-2 border-white border-opacity-30" />
       </div>
 
-      {/* Main Card */}
-      <div className="bg-white shadow-2xl border border-gray-200 rounded-3xl p-8 w-full max-w-2xl space-y-6 animate-fadeInUp">
-        <h2 className="text-3xl font-extrabold text-center text-blue-700 tracking-wide">
+      {/* Enhanced Main Card */}
+      <div className="bg-white bg-opacity-95 backdrop-blur-sm shadow-2xl border border-white border-opacity-30 rounded-3xl p-8 w-full max-w-2xl space-y-8 animate-fadeInUp">
+        <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-wide">
           🎤 Start Your Debate Journey
         </h2>
 
@@ -383,32 +410,42 @@ const TopicSelector = () => {
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
             placeholder="Enter debate topic or use voice"
-            className="border border-gray-300 p-2 rounded-md flex-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border-2 border-gray-200 p-3 rounded-xl flex-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-200 bg-gray-50 hover:bg-white"
             disabled={isDebating || loadingTranscription}
           />
           <button
             type="submit"
             disabled={loadingTranscription || isDebating || !topic.trim()}
-            className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-md font-semibold transition-all"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
           >
-            {loadingTranscription ? 'Transcribing...' : isDebating ? 'Debating...' : 'Start Debate'}
+            {loadingTranscription ? (
+              <span className="flex items-center gap-2">
+                <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                Transcribing...
+              </span>
+            ) : isDebating ? (
+              <span className="flex items-center gap-2">
+                <div className="animate-pulse w-2 h-2 bg-white rounded-full"></div>
+                Debating...
+              </span>
+            ) : 'Start Debate'}
           </button>
         </form>
 
-        {/* Action Buttons */}
+        {/* Enhanced Action Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           {!isRecording ? (
             <button
               onClick={startRecording}
               disabled={isDebating || loadingTranscription}
-              className="bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-md transition-all font-medium"
+              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-xl transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
             >
               🎙️ Record Topic
             </button>
           ) : (
             <button
               onClick={stopRecording}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-all font-medium animate-pulse"
+              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 py-3 rounded-xl transition-all duration-200 font-medium animate-pulse shadow-lg hover:shadow-xl"
             >
               ⏹️ Stop Recording
             </button>
@@ -417,7 +454,7 @@ const TopicSelector = () => {
           <button
             onClick={startRandomDebate}
             disabled={loadingTranscription || isDebating}
-            className="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-md transition-all font-medium"
+            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-xl transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
           >
             🎲 Random Topic
           </button>
@@ -425,45 +462,75 @@ const TopicSelector = () => {
           <button
             onClick={loadDebateHistory}
             disabled={loadingTranscription || isDebating}
-            className="bg-purple-500 hover:bg-purple-600 disabled:bg-gray-400 text-white px-4 py-2 rounded-md transition-all font-medium"
+            className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-xl transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
           >
             📜 History
           </button>
         </div>
 
-        {/* Connection Status */}
-        <div className="text-center text-sm text-gray-600">
-          WebSocket: <span className={`font-bold ${getConnectionStatusColor()}`}>{connectionStatus}</span>
+        {/* Enhanced Connection Status */}
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+            <span className="text-sm text-gray-600">WebSocket:</span>
+            <span className={`font-bold text-sm ${getConnectionStatusColor()}`}>
+              {connectionStatus}
+            </span>
+            <div className={`w-2 h-2 rounded-full ${
+              connectionStatus === 'connected' ? 'bg-green-500 animate-pulse' : 
+              connectionStatus === 'error' ? 'bg-red-500' : 'bg-gray-400'
+            }`}></div>
+          </div>
         </div>
       </div>
 
-      {/* History Modal */}
+      {/* Enhanced History Modal - Fixed black background issue */}
       {showHistory && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-4xl w-full max-h-96 overflow-y-auto">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-gray-800">Debate History</h3>
+        <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 max-w-4xl w-full max-h-[80vh] overflow-hidden">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent flex items-center gap-2">
+                <span className="text-2xl">📜</span>
+                Debate History
+              </h3>
               <button
                 onClick={() => setShowHistory(false)}
-                className="text-gray-500 hover:text-gray-700 text-xl"
+                className="text-gray-400 hover:text-gray-600 text-2xl w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center transition-all duration-200"
               >
                 ×
               </button>
             </div>
-            <div className="space-y-4 bg-auto p-4 rounded-lg shadow-md">
+            
+            {/* Fixed: Changed from bg-auto to proper background styling */}
+            <div className="space-y-4 bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl shadow-inner max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
               {debateHistory.length > 0 ? (
                 debateHistory.map((item, index) => (
-                  <div key={index} className="border-l-4 border-blue-400 pl-4 py-2">
-                    <div className="font-medium text-blue-700">{item.metadata?.topic || 'Unknown Topic'}</div>
-                    <div className="text-sm text-gray-600">
-                      Round {item.metadata?.round || 'N/A'} • {item.metadata?.timestamp || 'No timestamp'}
+                  <div key={index} className="bg-white border-l-4 border-purple-400 rounded-r-lg pl-6 pr-4 py-4 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div className="font-bold text-purple-700 text-lg mb-2 flex items-center gap-2">
+                      <span className="text-xl">💭</span>
+                      {item.metadata?.topic || 'Unknown Topic'}
                     </div>
-                    <div className="text-sm text-gray-700 mt-1">{item.content}</div>
+                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                      <span className="bg-gray-100 px-2 py-1 rounded-full">
+                        Round {item.metadata?.round || 'N/A'}
+                      </span>
+                      <span className="bg-blue-100 px-2 py-1 rounded-full text-blue-700">
+                        {item.metadata?.timestamp || 'No timestamp'}
+                      </span>
+                    </div>
+                    <div className="text-gray-700 leading-relaxed bg-gray-50 p-3 rounded-lg">
+                      {item.content}
+                    </div>
                   </div>
                 ))
               ) : (
-                <div className="text-center text-gray-500 py-8">
-                  No debate history found
+                <div className="text-center py-12">
+                  <div className="text-6xl mb-4">🤔</div>
+                  <div className="text-gray-500 text-lg font-medium">
+                    No debate history found
+                  </div>
+                  <div className="text-gray-400 text-sm mt-2">
+                    Start your first debate to see history here!
+                  </div>
                 </div>
               )}
             </div>
