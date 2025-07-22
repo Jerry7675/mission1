@@ -1,7 +1,7 @@
 import React from 'react';
 import { DebateProvider } from './contexts/DebateContext';
 import TopicSelector from './components/TopicSelector';
-import DebateUi from './components/DebateUi';
+
 import './App.css';
 
 function App() {
