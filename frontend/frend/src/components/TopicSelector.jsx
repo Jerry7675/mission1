@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDebate } from '../contexts/DebateContext';
-import logo from '../../public/vite.jpg';
+import logo from '../vite.jpg';
 
 const TopicSelector = () => {
   const [topic, setTopic] = useState('');

@@ -1,4 +1,4 @@
-# backend/app/__init__.py
+
 from pathlib import Path
 import logging
 
@@ -15,7 +15,7 @@ logging.basicConfig(
 # Package version
 __version__ = "0.1.0"
 
-# Ensure ChromaDB directory exists
+
 CHROMA_DIR = Path("./chroma_data")
 CHROMA_DIR.mkdir(exist_ok=True)
 
