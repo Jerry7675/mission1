@@ -9,7 +9,7 @@ from functools import wraps
 logger = logging.getLogger(__name__)
 
 def run_in_executor(func):
-    """Decorator to run sync functions in executor for async compatibility"""
+    
     @wraps(func)
     async def wrapper(*args, **kwargs):
         loop = asyncio.get_event_loop()

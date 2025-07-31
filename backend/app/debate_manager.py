@@ -82,7 +82,7 @@ class DebateManager:
     def _clean_response(self, text: str) -> str:
         if not text:
             return "No response."
-        # Strip common internal cues like "Think:" or hallucinated prefixes
+        # Strip 
         text = re.sub(r"(?i)^think:.*?\n", "", text)
         text = re.sub(r"(?i)^assistant: ?", "", text)
         return text.strip()

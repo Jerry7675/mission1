@@ -1,0 +1,138 @@
+# ================================
+# CORE WEB FRAMEWORK DEPENDENCIES
+# ================================
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+websockets==12.0
+
+# ================================
+# AI/ML CORE DEPENDENCIES
+# ================================
+
+# PyTorch (Core ML framework)
+torch==2.1.1+cpu
+torchaudio==2.1.1+cpu
+torchvision==0.16.1+cpu
+
+# For GPU support, use instead:
+# torch==2.1.1+cu118
+# torchaudio==2.1.1+cu118
+# torchvision==0.16.1+cu118
+
+# Whisper AI (Speech-to-Text)
+openai-whisper==20231117
+
+# Ollama (Local LLM interface)
+ollama==0.1.7
+
+# ChromaDB (Vector Database)
+chromadb==0.4.18
+
+# ================================
+# AUDIO PROCESSING DEPENDENCIES
+# ================================
+ffmpeg-python==0.2.0
+librosa==0.10.1
+soundfile==0.12.1
+numpy==1.24.3
+scipy==1.11.4
+
+# ================================
+# DATA PROCESSING & UTILITIES
+# ================================
+pandas==2.1.4
+pathlib2==2.3.7.post1
+python-dateutil==2.8.2
+uuid==1.30
+datetime
+typing-extensions==4.8.0
+
+# ================================
+# ASYNC & CONCURRENCY
+# ================================
+asyncio
+threading
+aiofiles==23.2.1
+
+# ================================
+# HTTP & API DEPENDENCIES
+# ================================
+httpx==0.25.2
+requests==2.31.0
+pydantic==2.5.0
+
+# ================================
+# LOGGING & CONFIGURATION
+# ================================
+python-dotenv==1.0.0
+logging
+configparser==6.0.0
+
+# ================================
+# CHROMADB SPECIFIC DEPENDENCIES
+# ================================
+# ChromaDB requires these additional packages
+sqlite3
+sentence-transformers==2.2.2
+onnxruntime==1.16.3
+tokenizers==0.15.0
+transformers==4.36.2
+huggingface-hub==0.19.4
+
+# ================================
+# WHISPER SPECIFIC DEPENDENCIES
+# ================================
+# Whisper requires these for audio processing
+more-itertools==10.1.0
+tiktoken==0.5.2
+regex==2023.10.3
+
+# ================================
+# SYSTEM & FILE HANDLING
+# ================================
+tempfile
+shutil
+os
+pathlib
+json
+re
+hashlib
+
+# ================================
+# DEVELOPMENT & TESTING
+# ================================
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.11.0
+flake8==6.1.0
+
+# ================================
+# PRODUCTION DEPLOYMENT
+# ================================
+gunicorn==21.2.0
+
+# ================================
+# OPTIONAL: FUTURE ENHANCEMENTS
+# ================================
+# Uncomment these for future features:
+
+# Database support
+# sqlalchemy==2.0.23
+# alembic==1.12.1
+
+# Authentication
+# python-jose[cryptography]==3.3.0
+# passlib[bcrypt]==1.7.4
+
+# Monitoring
+# prometheus-client==0.19.0
+# structlog==23.2.0
+
+# Additional ML libraries
+# scikit-learn==1.3.2
+# matplotlib==3.8.2
+# seaborn==0.13.0
+
+# Also need to installmicrosoft visual studio installer in which we have to install desktop development with c++.. 
+# ..in  visual studio build tools

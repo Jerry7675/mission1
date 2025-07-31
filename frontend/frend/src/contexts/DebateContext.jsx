@@ -1,4 +1,4 @@
-// src/contexts/DebateContext.jsx
+
 import React, { createContext, useContext, useState, useRef } from 'react';
 
 const DebateContext = createContext();
@@ -19,7 +19,7 @@ const setDebateTopic = (newTopic) => {
   setVerdict('');
   setIsDebating(true);
   setTopic(newTopic);
-  setError(null); // Clear any old error
+  setError(null); 
 
   // Create new WebSocket
   const ws = new WebSocket('ws://localhost:8000/ws/debate');
@@ -39,7 +39,7 @@ const setDebateTopic = (newTopic) => {
     } else if (message.type === 'verdict') {
       setVerdict(message.data.verdict);
       setIsDebating(false);
-      ws.close(); // Close after verdict
+      ws.close();
     } else if (message.type === 'error') {
       setError(message.message);
       setIsDebating(false);

@@ -83,10 +83,10 @@ const TopicSelector = () => {
 
       switch (message.type) {
         case 'round_update':
-          // handled in DebateContext
+         
           break;
         case 'verdict':
-          // handled in DebateContext
+        
           break;
         case 'error':
           console.error('Debate error:', message.message);
@@ -129,7 +129,7 @@ const TopicSelector = () => {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
       
-      // Stop all audio tracks
+    
       if (mediaRecorderRef.current.stream) {
         mediaRecorderRef.current.stream.getTracks().forEach(track => track.stop());
       }
@@ -217,7 +217,7 @@ const TopicSelector = () => {
       if (wsRef.current?.readyState === WebSocket.OPEN) {
         wsRef.current.send(JSON.stringify({ action: 'get_history' }));
       } else {
-        // Fallback to REST API
+       
         const response = await fetch('/api/history?limit=10');
         if (response.ok) {
           const data = await response.json();
@@ -244,7 +244,7 @@ const TopicSelector = () => {
     return healthStatus.status === 'healthy' ? 'text-green-500' : 'text-red-500';
   };
 
-  // If debate is active, show the debate interface
+  // If debate is active
   if (isDebating || transcript.length > 0) {
     return (
       <div className="relative min-h-screen w-full bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 p-4">
@@ -331,14 +331,14 @@ const TopicSelector = () => {
                       <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200 shadow-sm">
                         <span className="font-bold text-green-800 flex items-center gap-2 mb-2">
                           <span className="text-lg">✅</span>
-                          PRO:
+                          Fighter 1:
                         </span>
                         <p className="text-gray-700 leading-relaxed">{actualPro}</p>
                       </div>
                       <div className="bg-gradient-to-r from-red-50 to-rose-50 p-4 rounded-xl border border-red-200 shadow-sm">
                         <span className="font-bold text-red-800 flex items-center gap-2 mb-2">
                           <span className="text-lg">❌</span>
-                          CON:
+                          Fighter 2:
                         </span>
                         <p className="text-gray-700 leading-relaxed">{actualCon}</p>
                       </div>
@@ -368,14 +368,14 @@ const TopicSelector = () => {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 via-blue-50 to-purple-100 p-4 overflow-hidden">
-      {/* Enhanced floating animated background blobs */}
+     
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute bg-gradient-to-r from-pink-300 to-rose-300 opacity-20 w-72 h-72 rounded-full top-10 left-10 animate-pulse blur-xl" />
         <div className="absolute bg-gradient-to-r from-purple-300 to-indigo-300 opacity-20 w-96 h-96 rounded-full bottom-10 right-10 animate-ping blur-xl" />
         <div className="absolute bg-gradient-to-r from-blue-300 to-cyan-300 opacity-15 w-64 h-64 rounded-full top-1/2 left-1/3 animate-bounce blur-2xl" />
       </div>
 
-      {/* Enhanced Status Bar */}
+      
       <div className="absolute top-4 left-4 flex items-center gap-3">
         <div className="bg-white backdrop-blur-sm bg-opacity-90 px-4 py-2 rounded-full shadow-lg border border-white border-opacity-20">
           <span className="text-xs font-medium text-gray-600">Backend:</span>
@@ -393,12 +393,11 @@ const TopicSelector = () => {
         )}
       </div>
 
-      {/* Enhanced Logo */}
       <div className="absolute top-4 right-4">
         <img src={logo} alt="App Logo" className="h-16 w-auto drop-shadow-2xl rounded-2xl border-2 border-white border-opacity-30" />
       </div>
 
-      {/* Enhanced Main Card */}
+      
       <div className="bg-white bg-opacity-95 backdrop-blur-sm shadow-2xl border border-white border-opacity-30 rounded-3xl p-8 w-full max-w-2xl space-y-8 animate-fadeInUp">
         <h2 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent tracking-wide">
           🎤 Start Your Debate Journey
@@ -432,7 +431,7 @@ const TopicSelector = () => {
           </button>
         </form>
 
-        {/* Enhanced Action Buttons */}
+        
         <div className="flex flex-wrap justify-center gap-4">
           {!isRecording ? (
             <button
@@ -440,7 +439,7 @@ const TopicSelector = () => {
               disabled={isDebating || loadingTranscription}
               className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-6 py-3 rounded-xl transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
             >
-              🎙️ Record Topic
+              🎙️ Voice Input
             </button>
           ) : (
             <button
@@ -468,7 +467,7 @@ const TopicSelector = () => {
           </button>
         </div>
 
-        {/* Enhanced Connection Status */}
+       
         <div className="text-center">
           <div className="inline-flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border border-gray-200 shadow-sm">
             <span className="text-sm text-gray-600">WebSocket:</span>
@@ -483,7 +482,7 @@ const TopicSelector = () => {
         </div>
       </div>
 
-      {/* Enhanced History Modal - Fixed black background issue */}
+     
       {showHistory && (
         <div className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 max-w-4xl w-full max-h-[80vh] overflow-hidden">
@@ -500,7 +499,7 @@ const TopicSelector = () => {
               </button>
             </div>
             
-            {/* Fixed: Changed from bg-auto to proper background styling */}
+            
             <div className="space-y-4 bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl shadow-inner max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
               {debateHistory.length > 0 ? (
                 debateHistory.map((item, index) => (

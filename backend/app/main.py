@@ -24,7 +24,7 @@ app = FastAPI(
 # CORS setup for frontend/backend integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # TIP: Restrict in production
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -116,7 +116,7 @@ async def get_history(limit: int = 5):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Serve frontend if built
+
 frontend_dir = Path(__file__).parent.parent / "frontend" / "dist"
 if frontend_dir.exists():
     app.mount("/", StaticFiles(directory=str(frontend_dir), html=True), name="static")

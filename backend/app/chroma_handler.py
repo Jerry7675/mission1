@@ -41,11 +41,11 @@ class ChromaHandler:
             if not metadata or not isinstance(metadata, dict) or len(metadata) == 0:
                 raise ValueError("Expected metadata to be a non-empty dict")
             
-            # Create unique ID using timestamp and round number to avoid collisions
+            # Create unique ID 
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             unique_id = f"{timestamp}_topic_{hash(metadata.get('topic', ''))}_round_{round_data['round_number']}"
             
-            # Add timestamp to metadata for better history tracking
+         
             enhanced_metadata = {
                 **metadata,
                 "timestamp": datetime.now().isoformat(),
@@ -66,19 +66,19 @@ class ChromaHandler:
 
     def get_transcript(self, num_rounds: int = 5) -> List[Dict]:
         try:
-            # Query with ordering by timestamp (most recent first)
+            # Query with ordering recent first
             results = self.debate_collection.get(
-                limit=num_rounds * 3,  # Get more to account for multiple debates
+                limit=num_rounds * 3,  
                 include=["metadatas", "documents"]
             )
             
-            # Sort by timestamp descending (most recent first)
+            # Sort by timestamp  recent first
             combined_results = [
                 {"content": doc, "metadata": meta}
                 for doc, meta in zip(results["documents"], results["metadatas"])
             ]
             
-            # Sort by timestamp if available
+            
             combined_results.sort(
                 key=lambda x: x["metadata"].get("timestamp", ""), 
                 reverse=True
@@ -93,7 +93,7 @@ class ChromaHandler:
         """Get complete debate sessions grouped by session ID"""
         try:
             results = self.debate_collection.get(
-                limit=limit * 5,  # Get more rounds to group by sessions
+                limit=limit * 5,  
                 include=["metadatas", "documents"]
             )
             

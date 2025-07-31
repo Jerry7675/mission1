@@ -2438,3 +2438,543 @@ pip install python-multipart
 2025-07-22 20:40:11,742 - app.models - INFO - Ollama health check passed
 2025-07-22 20:40:11,751 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
 2025-07-22 20:40:11,752 - app.models - INFO - Ollama health check passed
+2025-07-23 07:15:25,291 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 07:15:45,295 - app - INFO - ChromaDB initialized successfully
+2025-07-23 07:15:45,970 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 07:15:45,975 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 07:15:46,046 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:15:46,048 - app.models - INFO - Ollama health check passed
+2025-07-23 07:15:54,841 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:15:54,842 - app.models - INFO - Ollama health check passed
+2025-07-23 07:15:54,863 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:15:54,864 - app.models - INFO - Ollama health check passed
+2025-07-23 07:16:00,195 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 07:16:00,198 - app - INFO - Streaming round 1
+2025-07-23 07:16:01,086 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:01,088 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/mistral/manifests/7b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:01,960 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:01,961 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:01,962 - app - ERROR - Round 1 
+2025-07-23 07:16:02,674 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,675 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,676 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,676 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,677 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,677 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,678 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,678 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,679 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,679 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,680 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,680 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,681 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,681 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,682 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,682 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,683 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,683 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,684 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,685 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,685 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,686 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,686 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,687 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,687 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,688 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,688 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,689 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,689 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,690 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,690 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,691 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,691 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,692 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,692 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,693 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,693 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,694 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,694 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,695 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,695 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,696 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,696 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,697 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,698 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,698 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,699 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,700 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,701 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,701 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,702 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,702 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 07:16:02,703 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 07:16:02,704 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 07:16:02,704 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 07:16:02,705 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 07:16:02,705 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 07:16:02,706 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 07:16:02,796 - app - INFO - Successfully logged round 1 with ID: 20250723_071601_topic_-862255582783646401_round_1
+2025-07-23 07:16:02,797 - app - INFO - Streaming round 2
+2025-07-23 07:16:03,658 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:03,659 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/gemma2/manifests/9b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:04,342 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:04,344 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:04,344 - app - ERROR - Round 2 
+2025-07-23 07:16:04,411 - app - INFO - Successfully logged round 2 with ID: 20250723_071604_topic_-862255582783646401_round_2
+2025-07-23 07:16:04,412 - app - INFO - Streaming round 3
+2025-07-23 07:16:05,130 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:05,131 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/mistral/manifests/7b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:05,818 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:05,819 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:05,820 - app - ERROR - Round 3 
+2025-07-23 07:16:05,888 - app - INFO - Successfully logged round 3 with ID: 20250723_071605_topic_-862255582783646401_round_3
+2025-07-23 07:16:05,889 - app - INFO - Streaming round 4
+2025-07-23 07:16:06,559 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:06,560 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/gemma2/manifests/9b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:07,239 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:07,240 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:07,241 - app - ERROR - Round 4 
+2025-07-23 07:16:07,314 - app - INFO - Successfully logged round 4 with ID: 20250723_071607_topic_-862255582783646401_round_4
+2025-07-23 07:16:07,315 - app - INFO - Streaming round 5
+2025-07-23 07:16:07,990 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:07,991 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/mistral/manifests/7b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:08,658 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:08,659 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:08,659 - app - ERROR - Round 5 
+2025-07-23 07:16:08,731 - app - INFO - Successfully logged round 5 with ID: 20250723_071608_topic_-862255582783646401_round_5
+2025-07-23 07:16:09,415 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 500 Internal Server Error"
+2025-07-23 07:16:09,416 - app - ERROR - Model load failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/deepseek-r1/manifests/7b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:10,189 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:16:10,191 - app - ERROR - Fetching models failed: 'name'
+2025-07-23 07:16:10,191 - app - ERROR - Verdict generation failed: pull model manifest: Get "https://registry.ollama.ai/v2/library/deepseek-r1/manifests/7b": dial tcp: lookup registry.ollama.ai: no such host (status code: 500)
+2025-07-23 07:16:10,196 - app - INFO - WebSocket: Client disconnected
+2025-07-23 07:16:10,208 - app - INFO - WebSocket: Client disconnected
+2025-07-23 07:20:38,877 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:20:38,880 - app.models - INFO - Ollama health check passed
+2025-07-23 07:20:38,903 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 07:20:38,906 - app.models - INFO - Ollama health check passed
+2025-07-23 07:20:41,210 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 07:20:41,212 - app - INFO - Streaming round 1
+2025-07-23 07:20:43,236 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 07:20:43,238 - app - INFO - Loaded model: mistral:7b
+2025-07-23 07:21:31,403 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 07:21:31,406 - app - INFO - Unloading model: mistral:7b
+2025-07-23 07:21:33,240 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 07:21:33,241 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 07:22:32,549 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 07:22:32,551 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 07:22:32,644 - app - INFO - Successfully logged round 1 with ID: 20250723_072232_topic_8162824074036019198_round_1
+2025-07-23 07:22:32,645 - app - INFO - Streaming round 2
+2025-07-23 07:22:35,509 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 07:22:35,510 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 07:22:40,953 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:05:26,996 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 08:05:33,971 - app - INFO - ChromaDB initialized successfully
+2025-07-23 08:05:34,220 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 08:05:34,222 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 08:05:36,228 - app.models - ERROR - Ollama health check failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-07-23 08:05:36,229 - app - ERROR - Ollama service not running! Start it via: ollama serve
+2025-07-23 08:05:55,166 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 08:06:00,340 - app - INFO - ChromaDB initialized successfully
+2025-07-23 08:06:00,583 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 08:06:00,585 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 08:06:00,601 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:06:00,603 - app.models - INFO - Ollama health check passed
+2025-07-23 08:06:57,178 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:06:57,179 - app.models - INFO - Ollama health check passed
+2025-07-23 08:06:57,194 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:06:57,195 - app.models - INFO - Ollama health check passed
+2025-07-23 08:08:32,525 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 08:08:32,526 - app - INFO - Streaming round 1
+2025-07-23 08:08:34,061 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:08:34,062 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:08:49,882 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:08:49,883 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:08:51,267 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:08:51,268 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:09:43,210 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:09:43,211 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:09:43,561 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,562 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,562 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,562 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,562 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,563 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,564 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,565 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,566 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,567 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,568 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,569 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 08:09:43,570 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 08:09:43,571 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 08:09:43,571 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 08:09:43,612 - app - INFO - Successfully logged round 1 with ID: 20250723_080943_topic_6265633746827686109_round_1
+2025-07-23 08:09:43,612 - app - INFO - Streaming round 2
+2025-07-23 08:09:45,030 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:09:45,031 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:10:06,304 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:10:06,305 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:10:07,703 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:10:07,704 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:10:23,947 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:10:23,948 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:10:23,992 - app - INFO - Successfully logged round 2 with ID: 20250723_081023_topic_6265633746827686109_round_2
+2025-07-23 08:10:23,993 - app - INFO - Streaming round 3
+2025-07-23 08:10:25,447 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:10:25,448 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:10:32,528 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:10:32,529 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:10:34,032 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:10:34,033 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:11:12,095 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:11:12,097 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:11:12,139 - app - INFO - Successfully logged round 3 with ID: 20250723_081112_topic_6265633746827686109_round_3
+2025-07-23 08:11:12,140 - app - INFO - Streaming round 4
+2025-07-23 08:11:13,616 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:11:13,617 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:11:34,652 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:11:34,652 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:11:36,088 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:11:36,089 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:12:01,623 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:12:01,624 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:12:01,664 - app - INFO - Successfully logged round 4 with ID: 20250723_081201_topic_6265633746827686109_round_4
+2025-07-23 08:12:01,665 - app - INFO - Streaming round 5
+2025-07-23 08:12:03,131 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:12:03,132 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:12:12,145 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:12:12,146 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:12:13,610 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:12:13,611 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:13:01,229 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:13:01,230 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:13:01,275 - app - INFO - Successfully logged round 5 with ID: 20250723_081301_topic_6265633746827686109_round_5
+2025-07-23 08:13:02,755 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:13:02,756 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-23 08:13:45,846 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:13:45,847 - app - INFO - Unloading model: deepseek-r1:7b
+2025-07-23 08:13:45,855 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:13:45,858 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:17:24,203 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:17:24,205 - app.models - INFO - Ollama health check passed
+2025-07-23 08:17:24,215 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:17:24,216 - app.models - INFO - Ollama health check passed
+2025-07-23 08:21:25,625 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:21:25,625 - app.models - INFO - Ollama health check passed
+2025-07-23 08:21:25,634 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:21:25,634 - app.models - INFO - Ollama health check passed
+2025-07-23 08:24:00,653 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 08:24:00,669 - app - INFO - Streaming round 1
+2025-07-23 08:24:02,193 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:24:02,194 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:24:25,436 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:24:25,437 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:24:27,760 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:24:27,761 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:25:05,379 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:25:05,381 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:25:05,422 - app - INFO - Successfully logged round 1 with ID: 20250723_082505_topic_-4093142312837900822_round_1
+2025-07-23 08:25:05,423 - app - INFO - Streaming round 2
+2025-07-23 08:25:06,923 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:25:06,924 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:25:34,233 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:25:34,234 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:25:36,524 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:25:36,525 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:26:02,846 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:26:02,847 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:26:02,890 - app - INFO - Successfully logged round 2 with ID: 20250723_082602_topic_-4093142312837900822_round_2
+2025-07-23 08:26:02,890 - app - INFO - Streaming round 3
+2025-07-23 08:26:05,284 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:26:05,285 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:26:12,318 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:26:12,319 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:26:14,720 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:26:14,721 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:26:58,074 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:26:58,076 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:26:58,125 - app - INFO - Successfully logged round 3 with ID: 20250723_082658_topic_-4093142312837900822_round_3
+2025-07-23 08:26:58,126 - app - INFO - Streaming round 4
+2025-07-23 08:26:59,658 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:26:59,659 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:27:21,959 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:27:21,959 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:27:23,441 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:27:23,442 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:27:43,802 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:27:43,804 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:27:43,885 - app - INFO - Successfully logged round 4 with ID: 20250723_082743_topic_-4093142312837900822_round_4
+2025-07-23 08:27:43,886 - app - INFO - Streaming round 5
+2025-07-23 08:27:45,358 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:27:45,359 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:27:54,706 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:27:54,707 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:27:56,186 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:27:56,187 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:28:36,600 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:28:36,601 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:28:36,644 - app - INFO - Successfully logged round 5 with ID: 20250723_082836_topic_-4093142312837900822_round_5
+2025-07-23 08:28:38,167 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:28:38,168 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-23 08:29:30,984 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:29:30,985 - app - INFO - Unloading model: deepseek-r1:7b
+2025-07-23 08:29:30,987 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:29:30,991 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:30:21,676 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:30:21,684 - app.models - INFO - Ollama health check passed
+2025-07-23 08:30:21,776 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:30:21,788 - app.models - INFO - Ollama health check passed
+2025-07-23 08:32:29,628 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:32:29,629 - app.models - INFO - Ollama health check passed
+2025-07-23 08:32:29,636 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:32:29,637 - app.models - INFO - Ollama health check passed
+2025-07-23 08:32:34,374 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 08:32:34,396 - app - INFO - Streaming round 1
+2025-07-23 08:32:35,803 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:32:35,803 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:32:54,706 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:32:54,707 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:32:56,142 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:32:56,143 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:33:35,368 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:33:35,369 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:33:35,417 - app - INFO - Successfully logged round 1 with ID: 20250723_083335_topic_-3311774733677117214_round_1
+2025-07-23 08:33:35,418 - app - INFO - Streaming round 2
+2025-07-23 08:33:36,880 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:33:36,880 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:33:54,405 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:33:54,406 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:33:55,955 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:33:55,956 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:34:12,610 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:34:12,611 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:34:12,652 - app - INFO - Successfully logged round 2 with ID: 20250723_083412_topic_-3311774733677117214_round_2
+2025-07-23 08:34:12,653 - app - INFO - Streaming round 3
+2025-07-23 08:34:14,253 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:34:14,254 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:34:30,047 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:34:30,048 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:34:31,462 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:34:31,462 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:35:15,093 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:35:15,094 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:35:15,138 - app - INFO - Successfully logged round 3 with ID: 20250723_083515_topic_-3311774733677117214_round_3
+2025-07-23 08:35:15,139 - app - INFO - Streaming round 4
+2025-07-23 08:35:16,614 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:35:16,615 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:35:36,426 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:35:36,427 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:35:37,875 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:35:37,875 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:35:54,678 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:35:54,680 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:35:54,722 - app - INFO - Successfully logged round 4 with ID: 20250723_083554_topic_-3311774733677117214_round_4
+2025-07-23 08:35:54,723 - app - INFO - Streaming round 5
+2025-07-23 08:35:56,199 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:35:56,200 - app - INFO - Loaded model: mistral:7b
+2025-07-23 08:36:05,659 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:36:05,660 - app - INFO - Unloading model: mistral:7b
+2025-07-23 08:36:07,073 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:36:07,073 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 08:36:45,792 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:36:45,793 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 08:36:45,838 - app - INFO - Successfully logged round 5 with ID: 20250723_083645_topic_-3311774733677117214_round_5
+2025-07-23 08:36:47,332 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 08:36:47,333 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-23 08:37:34,007 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 08:37:34,009 - app - INFO - Unloading model: deepseek-r1:7b
+2025-07-23 08:37:34,011 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:37:34,016 - app - INFO - WebSocket: Client disconnected
+2025-07-23 08:37:41,457 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:37:41,458 - app.models - INFO - Ollama health check passed
+2025-07-23 08:37:41,467 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:37:41,468 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:02,611 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:02,612 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:02,619 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:02,620 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:10,609 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:10,610 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:10,623 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:10,624 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:16,999 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 08:38:24,863 - app - INFO - ChromaDB initialized successfully
+2025-07-23 08:38:25,161 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 08:38:25,164 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 08:38:25,170 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:25,176 - app.models - INFO - Ollama health check passed
+2025-07-23 08:38:26,218 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 08:38:32,062 - app - INFO - ChromaDB initialized successfully
+2025-07-23 08:38:32,351 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 08:38:32,353 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 08:38:32,360 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 08:38:32,361 - app.models - INFO - Ollama health check passed
+2025-07-23 09:10:59,362 - app - INFO - Initialized debate-ai v0.1.0
+2025-07-23 09:11:05,010 - app - INFO - ChromaDB initialized successfully
+2025-07-23 09:11:05,342 - app.models - INFO - Initialized Ollama client with base_url: http://127.0.0.1:11434
+2025-07-23 09:11:05,345 - app - WARNING - Frontend not found. Running in API-only mode.
+2025-07-23 09:11:05,351 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 09:11:05,352 - app.models - INFO - Ollama health check passed
+2025-07-23 09:11:18,604 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 09:11:18,605 - app.models - INFO - Ollama health check passed
+2025-07-23 09:11:18,615 - httpx - INFO - HTTP Request: GET http://127.0.0.1:11434/api/tags "HTTP/1.1 200 OK"
+2025-07-23 09:11:18,616 - app.models - INFO - Ollama health check passed
+2025-07-23 09:11:57,199 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/show "HTTP/1.1 200 OK"
+2025-07-23 09:11:57,201 - app - INFO - Streaming round 1
+2025-07-23 09:11:59,886 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:11:59,886 - app - INFO - Loaded model: mistral:7b
+2025-07-23 09:12:20,304 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:12:20,305 - app - INFO - Unloading model: mistral:7b
+2025-07-23 09:12:22,561 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:12:22,562 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 09:13:02,541 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:13:02,542 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 09:13:02,925 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,926 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,926 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,926 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,926 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,927 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,928 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,929 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,930 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,931 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,931 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,931 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,931 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,931 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,932 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,932 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,932 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,932 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,932 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,933 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 09:13:02,934 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_1
+2025-07-23 09:13:02,935 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_2
+2025-07-23 09:13:02,935 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_3
+2025-07-23 09:13:02,935 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_4
+2025-07-23 09:13:02,935 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: round_5
+2025-07-23 09:13:03,033 - app - INFO - Successfully logged round 1 with ID: 20250723_091302_topic_-7158663718324192889_round_1
+2025-07-23 09:13:03,034 - app - INFO - Streaming round 2
+2025-07-23 09:13:04,441 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:13:04,442 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 09:13:34,291 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:13:34,292 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 09:13:36,571 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:13:36,571 - app - INFO - Loaded model: mistral:7b
+2025-07-23 09:14:01,586 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:14:01,587 - app - INFO - Unloading model: mistral:7b
+2025-07-23 09:14:01,643 - app - INFO - Successfully logged round 2 with ID: 20250723_091401_topic_-7158663718324192889_round_2
+2025-07-23 09:14:01,644 - app - INFO - Streaming round 3
+2025-07-23 09:14:03,087 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:14:03,087 - app - INFO - Loaded model: mistral:7b
+2025-07-23 09:14:12,339 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:14:12,340 - app - INFO - Unloading model: mistral:7b
+2025-07-23 09:14:14,698 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:14:14,699 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 09:14:51,644 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:14:51,645 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 09:14:51,676 - app - INFO - Successfully logged round 3 with ID: 20250723_091451_topic_-7158663718324192889_round_3
+2025-07-23 09:14:51,677 - app - INFO - Streaming round 4
+2025-07-23 09:14:53,170 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:14:53,171 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 09:15:19,963 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:15:19,964 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 09:15:21,385 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:15:21,386 - app - INFO - Loaded model: mistral:7b
+2025-07-23 09:15:40,531 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:15:40,532 - app - INFO - Unloading model: mistral:7b
+2025-07-23 09:15:40,568 - app - INFO - Successfully logged round 4 with ID: 20250723_091540_topic_-7158663718324192889_round_4
+2025-07-23 09:15:40,569 - app - INFO - Streaming round 5
+2025-07-23 09:15:42,021 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:15:42,022 - app - INFO - Loaded model: mistral:7b
+2025-07-23 09:15:55,011 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:15:55,012 - app - INFO - Unloading model: mistral:7b
+2025-07-23 09:15:56,440 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:15:56,441 - app - INFO - Loaded model: gemma2:9b
+2025-07-23 09:16:40,838 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:16:40,839 - app - INFO - Unloading model: gemma2:9b
+2025-07-23 09:16:40,882 - app - INFO - Successfully logged round 5 with ID: 20250723_091640_topic_-7158663718324192889_round_5
+2025-07-23 09:16:42,353 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/pull "HTTP/1.1 200 OK"
+2025-07-23 09:16:42,353 - app - INFO - Loaded model: deepseek-r1:7b
+2025-07-23 09:17:39,920 - httpx - INFO - HTTP Request: POST http://127.0.0.1:11434/api/generate "HTTP/1.1 200 OK"
+2025-07-23 09:17:39,922 - app - INFO - Unloading model: deepseek-r1:7b
+2025-07-23 09:17:39,929 - app - INFO - WebSocket: Client disconnected
+2025-07-23 09:17:39,935 - app - INFO - WebSocket: Client disconnected
